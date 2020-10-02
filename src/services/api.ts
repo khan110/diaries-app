@@ -14,10 +14,10 @@ http.interceptors.response.use(
     }
   },
   (error: AxiosError) => {
-    const {
-      response,
-      request,
-    }: { response?: AxiosResponse; request?: XMLHttpRequest } = error;
+    const { response, request }: {
+      response?: AxiosResponse;
+      request?: XMLHttpRequest;
+    } = error;
     if (response) {
       if (response.status >= 400 && response.status < 500) {
         showAlert(response.data?.data?.message, 'error');
